@@ -1,17 +1,3 @@
-# pyriand3r/restyaboard
-
-Open source, Trello like Kanban board, based on Restya platform.
-http://restya.com/board
-
-## Build
-
-```
-docker build -t restya:0.6.3 .
-```
-
-## `docker-compose.yml`
-
-```
 restyaboard:
   image: restya:0.6.3
   ports:
@@ -38,14 +24,3 @@ elasticsearch: # optional
   image: elasticsearch
   volumes: # optional
     - /restya/search:/usr/share/elasticsearch/data
-```
-
-## Default users
-
-```
-Username: admin
-Password: restya
-
-Username: user
-Password: restya
-```
