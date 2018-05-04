@@ -1,19 +1,23 @@
-**Warning:** This image is not maintained anymore. I personally switched to [Wekan](https://wekan.io/).
-
-# viossat/restyaboard
+# pyriand3r/restyaboard
 
 Open source, Trello like Kanban board, based on Restya platform.
 http://restya.com/board
+
+## Build
+
+```
+docker build -t restya:0.6.3 .
+```
 
 ## `docker-compose.yml`
 
 ```
 restyaboard:
-  image: viossat/restyaboard
+  image: restya:0.6.3
   ports:
-    - "80:80"
+    - "8080:80"
   volumes: # optional
-    - /volume/path/media:/var/www/html/media
+    - /home/gabriel/ressourcen/docker/restya/media:/var/www/html/media
   links:
     - postgres
     - elasticsearch # optional
@@ -26,14 +30,14 @@ restyaboard:
 postgres:
   image: postgres
   volumes: # optional
-    - /volume/path/postgres:/var/lib/postgresql/data
+    - /home/gabriel/ressourcen/docker/restya/db:/var/lib/postgresql/data
   environment:
     - POSTGRES_USER=restyaboard
     - POSTGRES_PASSWORD=restyaboard
 elasticsearch: # optional
   image: elasticsearch
   volumes: # optional
-    - /volume/path/elasticsearch:/usr/share/elasticsearch/data
+    - /home/gabriel/ressourcen/docker/restya/search:/usr/share/elasticsearch/data
 ```
 
 ## Default users
