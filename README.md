@@ -1,3 +1,5 @@
+Originally created by viossat, i updated the files for the latest restyaboard version
+
 # pyriand3r/restyaboard
 
 Open source, Trello like Kanban board, based on Restya platform.
@@ -6,14 +8,14 @@ http://restya.com/board
 ## Build
 
 ```
-docker build -t restya:0.6.3 .
+docker build -t pyriand3r/restyaboard .
 ```
 
 ## `docker-compose.yml`
 
 ```
 restyaboard:
-  image: restya:0.6.3
+  image: pyriand3r/restyaboard
   ports:
     - "8080:80"
   volumes: # optional
