@@ -2,7 +2,7 @@ FROM debian:stretch
 
 MAINTAINER Gabriel Juelke <pyriand3r@gmail.com> 
 
-ENV RESTYABOARD_VERSION 0.6.3
+ENV RESTYABOARD_VERSION 0.6.7
 
 RUN echo "postfix postfix/mailname string localhost" | debconf-set-selections && \ 
     echo "postfix postfix/main_mailer_type string 'Internet Site'" | debconf-set-selections && \

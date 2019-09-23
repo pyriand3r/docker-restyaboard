@@ -6,7 +6,6 @@ restyaboard:
     - /restya/media:/var/www/html/media
   links:
     - postgres
-    - elasticsearch # optional
   environment:
     - DB_HOST=postgres
     - DB_PORT=5432 # optional, default: 5432
@@ -20,7 +19,3 @@ postgres:
   environment:
     - POSTGRES_USER=restyaboard
     - POSTGRES_PASSWORD=restyaboard
-elasticsearch: # optional
-  image: elasticsearch
-  volumes: # optional
-    - /restya/search:/usr/share/elasticsearch/data
